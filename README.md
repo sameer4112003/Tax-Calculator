@@ -56,7 +56,14 @@ This project is a simple web-based tax calculator that calculates the tax based 
 Screenshots
 
 Form ViEW
-![Uploading Screenshot 2024-04-14 at 10.25.48 AM.png…]()
+## Tests
+
+![Tests Passing](tax-SS/1.png)
+![Tests Passing](tax-SS/2.png)
+![Tests Passing](tax-SS/3.png)
+![Tests Passing](tax-SS/4.png)
+
+
 
 Error Handling
 Result Modal
