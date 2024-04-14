@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 500px;
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        #result {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #result p {
+            margin: 10px 0;
+        }
+        #closeButton {
+            display: block;
+            margin: 20px auto; /* Center the button horizontally */
+            width: 30%;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #6e4f8e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #closeButton:hover {
+            background-color:  #4CAF50; /* Darker shade of blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tax Calculation Result</h2>
+        <div id="result"></div>
+        <button id="closeButton">Close</button>
+    </div>
+
+    <script>
+        // Retrieve values from sessionStorage
+        const taxableIncome = sessionStorage.getItem('taxableIncome');
+        const tax = sessionStorage.getItem('tax');
+        const overallIncome = sessionStorage.getItem('overallIncome');
+
+        // Display the result
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <p>Your overall income after tax deduction is: ₹${parseFloat(overallIncome).toLocaleString()}.</p>
+        `;
+
+        // Add event listener to the close button
+        const closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', () => {
+            // Redirect to the next page
+            window.location.href = 'index.html'; // Replace 'next_page.html' with your desired URL
+        });
+    </script>
+</body>
+</html>
